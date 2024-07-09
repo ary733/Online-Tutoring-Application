@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tutoring Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Tutoring Application</h1>
+        <div id="userStatus">
+            <span id="loggedInUser"></span>
+            <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <section id="authSection">
+            <h2>Login / Signup</h2>
+            <form id="authForm" onsubmit="event.preventDefault(); login();">
+                <input type="email" id="emailInput" placeholder="Email" required>
+                <input type="password" id="passwordInput" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <button type="button" onclick="signup()">Sign Up</button>
+            </form>
+        </section>
+        <section id="videoChatSection" style="display: none;">
+            <h2>Video Chat</h2>
+            <div class="video-container">
+                <video id="localVideo" autoplay muted></video>
+                <video id="remoteVideo" autoplay></video>
+            </div>
+        </section>
+        <section id="chatSection" style="display: none;">
+            <h2>Chat</h2>
+            <div id="chatbox" class="chatbox"></div>
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
